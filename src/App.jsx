@@ -2,7 +2,8 @@ const Hello = () => {
   return <h1>Hello, World!</h1>
 }
 
-//component
+//component multiple component created
+
 const App = () => {
   return (
     <div>
