@@ -1,5 +1,4 @@
 
-
 const App = () => {
   const friends = [
     {id: 1, name:'John', age: 20},
@@ -19,4 +18,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
