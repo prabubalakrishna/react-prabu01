@@ -1,15 +1,16 @@
-const Hello = () => {
-  return <h1>Hello, World!</h1>
-}
+
+import Hello from "./components/Hello";
 
 //component multiple component created
-
 const App = () => {
+
+  const name ='Peter';
+
   return (
     <div>
-      <Hello />
-      <Hello />
-      <Hello />
+      <Hello 
+      name={name}
+      />
     </div>
   )
 }
