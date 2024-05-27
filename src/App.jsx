@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const App=()=> {
 
   let[count,setCount] = useState(0);
+// run only once when the component is mounted
+//and whenever the state changes (any statewithin the component)
+useEffect(()=>{
+console.log('Component mount');
+});
 
   const handleIncrement = () =>{
     setCount(count +1);
@@ -11,9 +16,8 @@ const App=()=> {
     setCount(count -1);
   }
   const handleReset = () =>{
-    setCount(count =0);
+    setCount(0);
   }
-
 
   return(
     <div>
