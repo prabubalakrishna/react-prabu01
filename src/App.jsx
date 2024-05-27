@@ -1,32 +1,36 @@
 import { useEffect, useState } from "react";
+import Conter from"./components/Counter";
 
 const App=()=> {
 
   let[count,setCount] = useState(0);
-  let [increment, setIncrement] = useState(0);
-// runs only once when thecomponent is mounted
-useEffect(()=>{
-  console.log('useEffect called')
-console.log('Count:', count);
-console.log('Increment:',increment);
-}); [count];
+  let[history,setHistory] = useState([]);
 
-  const handleIncrement = () =>{
-    setIncrement(Increment +1);
+  const handleIncrement =() =>{
+    setCount(count + 1);
+    setHistory([...history, 'I']);
   }
-  const handleDecrement =()=> {
-    setCount(count -1);
+  const handleDecrement =() =>{
+    setCount(count - 1);
+    setHistory([...history, 'D']);
   }
-  const handleReset = () =>{
+  const handleReset =() =>{
     setCount(0);
+    setHistory([...history, 'E']);
   }
 
   return(
     <div>
-      <h1>Counter: {count}</h1>
+      <Counter
+      count={count}
+      />
+   
       <button onClick={handleIncrement}>Increment</button>
-    <button onClick={handleDecrement}>Decrement</button>
-    <button onClick={handleReset}>Reset</button>
+      <button onClick={handleDecrement}>Decrement</button>
+      <button onClick={handleReset}>Reset</button>
+      <History
+      history={history}
+       />
     </div>
   )
 }
